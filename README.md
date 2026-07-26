@@ -100,3 +100,13 @@ The long-term BeatFlow desktop application will be built in Python and will incl
 Prototype complete.
 
 The knowledge gained from this project will be used to build the full BeatFlow desktop application.
+
+## Note
+
+This repository contains the initial prototype of BeatFlow.
+
+The full BeatFlow application is planned as a Python desktop application with a graphical interface and significantly expanded functionality.
+
+## License
+
+This project is currently provided for educational and portfolio purposes.
