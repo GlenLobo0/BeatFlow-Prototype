@@ -1,24 +1,47 @@
-# Audio
+# Audio files
 *.wav
 *.mp3
 
-# Video
+# Generated video
 *.mp4
 
-# FL Studio
+# FL Studio projects
 *.flp
 
-# Windows
+# Windows metadata
 Thumbs.db
 Desktop.ini
 
 # FFmpeg binaries
 ffmpeg/
 
-# Temporary files
+# Temporary files and Python cache
 *.log
 *.tmp
-
-# Python cache (for future)
 __pycache__/
 *.pyc
+
+# macOS metadata
+.DS_Store
+
+# Node dependencies and frontend builds
+node_modules/
+dist/
+dist-ssr/
+
+# Rust and Tauri build output
+target/
+**/target/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Local editor settings
+.vscode/
+.idea/
+
+# Local icon backups
+icons-backup/
+**/icons-backup/

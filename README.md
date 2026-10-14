@@ -1,112 +1,82 @@
-![Windows](https://img.shields.io/badge/Platform-Windows-blue)
-![Batch](https://img.shields.io/badge/Language-Batch-green)
-![FFmpeg](https://img.shields.io/badge/FFmpeg-Multimedia-red)
-![Status](https://img.shields.io/badge/Status-Prototype-orange)
+# BeatFlow
 
-# 🎵 BeatFlow Prototype
+**Turn your beat folder into a YouTube-ready music video.**
 
-### Automation for Music Producers
+BeatFlow is a desktop automation tool for music producers. It combines audio and artwork into an MP4 video using FFmpeg, reducing the repetitive work involved in preparing beats for YouTube.
 
-A prototype automation tool that converts a beat folder into a YouTube-ready MP4 using Windows Batch and FFmpeg.
+## macOS Desktop App
 
----
+The current macOS application is built with Tauri, React, TypeScript, Rust, and FFmpeg.
 
-## Overview
+### Features
 
-BeatFlow Prototype was created to remove my dependency on online video generation services such as TunesToTube.
+- Generate a video from a folder containing an MP3 and its artwork
+- Render a 1920 × 1080 MP4 with H.264 video and AAC audio
+- Preview the artwork
+- Track encoding progress
+- Open the output folder after rendering
+- Switch between dark and beige themes
+- Use drag-and-drop to simplify the workflow
 
-Instead of manually uploading artwork and audio, this tool generates the final MP4 locally with a single drag-and-drop action.
+### How to Use
 
-This project serves as the first prototype for the future BeatFlow desktop application.
+1. Create a folder for your beat.
+2. Place the MP3 audio file and its artwork inside that folder.
+3. Open BeatFlow and provide the folder through the app's workflow.
+4. Start the render and monitor the progress.
+5. Open the output folder to access the generated MP4.
 
----
+**Important:** The input folder must contain both an MP3 file and the artwork. The app is designed around this folder-based workflow.
 
-## Features
+## Windows Prototype
 
-- Automatic WAV detection
-- Automatic image detection (PNG/JPG/JPEG)
-- Automatic output naming
-- Automatic audio duration detection using ffprobe
-- One-step drag-and-drop workflow
-- Local MP4 generation
-- YouTube-ready output
+The `Windows/` directory contains the original Windows Batch prototype, which uses FFmpeg to automate video generation from a beat folder.
 
----
+The prototype represents the initial version of the project and the workflow that inspired the macOS desktop application.
 
-## Folder Structure
+## Project Structure
 
+```text
+BeatFlow-Prototype/
+├── Mac/
+│   └── BeatFlow/       # macOS desktop application
+├── Windows/
+│   └── make_video.bat  # Original Windows prototype
+├── make_video.bat      # Original root-level prototype script
+└── README.md
 ```
-Beat Folder/
-│
-├── beat.flp
-├── beat.wav
-├── thumbnail.jpg
-└── beat.mp4
-```
 
-Every beat remains completely self-contained.
+## Technology Stack
 
----
-
-## Workflow
-
-1. Finish the beat.
-2. Export the WAV.
-3. Save the artwork in the same folder.
-4. Drag the folder onto `make_video.bat`.
-5. BeatFlow Prototype generates the MP4 automatically.
-
----
-
-## Technologies
-
-- Windows Batch
+- Tauri
+- React
+- TypeScript
+- Rust
+- Vite
 - FFmpeg
-- ffprobe
 
----
+## Development
 
-## Lessons Learned
+To run the macOS app in development mode:
 
-This prototype demonstrated that:
+```bash
+cd Mac/BeatFlow
+npm install
+npm run tauri dev
+```
 
-- Keeping every beat in its own folder greatly simplifies automation.
-- Automatic file detection is more reliable than hardcoded filenames.
-- Reading audio duration with ffprobe is more accurate than relying on `-shortest`.
-- A simple prototype can significantly improve a real production workflow.
+To build the app:
 
----
+```bash
+npm run tauri build
+```
 
-## Future Development
+Building requires the appropriate Tauri, Rust, and macOS development prerequisites. FFmpeg must also be available as required by the application.
 
-This repository is **not the final BeatFlow application**.
+## Project Status
 
-The long-term BeatFlow desktop application will be built in Python and will include:
-
-- Modern desktop UI
-- Drag-and-drop interface
-- Artwork preview
-- Live encoding progress
-- Metadata generation
-- BPM detection
-- Musical key detection
-- Upload assistance
-- Batch processing
-
----
-
-## Status
-
-Prototype complete.
-
-The knowledge gained from this project will be used to build the full BeatFlow desktop application.
-
-## Note
-
-This repository contains the initial prototype of BeatFlow.
-
-The full BeatFlow application is planned as a Python desktop application with a graphical interface and significantly expanded functionality.
+BeatFlow is an evolving project focused on making music-video preparation more convenient for independent music producers.
 
 ## License
 
-This project is currently provided for educational and portfolio purposes.
+No open-source license has been specified yet. All rights are reserved unless a license is added to this repository.

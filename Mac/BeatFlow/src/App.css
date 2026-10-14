@@ -1,0 +1,2345 @@
+:root {
+
+  font-family:
+
+    Inter,
+
+    -apple-system,
+
+    BlinkMacSystemFont,
+
+    "SF Pro Display",
+
+    "SF Pro Text",
+
+    sans-serif;
+
+
+
+  color: #f5f5f5;
+
+  background: #090909;
+
+
+
+  font-synthesis: none;
+
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+
+}
+
+
+
+* {
+
+  box-sizing: border-box;
+
+}
+
+
+
+html,
+
+body,
+
+#root {
+
+  width: 100%;
+
+  min-width: 100%;
+
+  min-height: 100%;
+
+  margin: 0;
+
+}
+
+
+
+body {
+
+  background:
+
+    radial-gradient(
+
+      circle at 78% 15%,
+
+      rgba(255, 255, 255, 0.045),
+
+      transparent 28%
+
+    ),
+
+    #090909;
+
+}
+
+
+
+button {
+
+  font: inherit;
+
+}
+
+
+
+.app-shell {
+
+  min-height: 100vh;
+
+  padding: 28px 34px 22px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+}
+
+
+
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+   TOP BAR
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+
+
+.topbar {
+
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+}
+
+
+
+.brand {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+}
+
+
+
+.brand-mark {
+
+  width: 34px;
+
+  height: 34px;
+
+  display: grid;
+
+  place-items: center;
+
+
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 10px;
+
+
+
+  background: #f5f5f5;
+
+  color: #090909;
+
+
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+
+}
+
+
+
+.brand-name {
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+}
+
+
+
+.brand-subtitle {
+
+  margin-top: 2px;
+
+  color: #676767;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+}
+
+
+
+.system-status {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+
+
+  color: #777;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+}
+
+
+
+.status-dot,
+
+.mini-dot {
+
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #b8ff66;
+
+  box-shadow: 0 0 14px rgba(184, 255, 102, 0.5);
+
+}
+
+
+
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+   WORKSPACE
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+
+
+.workspace {
+
+  width: min(1040px, 100%);
+
+  margin: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 30px;
+
+}
+
+
+
+.hero-copy {
+
+  animation: fadeUp 0.55s ease both;
+
+}
+
+
+
+.eyebrow {
+
+  margin: 0 0 12px;
+
+
+
+  color: #666;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.2em;
+
+}
+
+
+
+.hero-copy h1 {
+
+  margin: 0;
+
+
+
+  color: #f4f4f4;
+
+  font-size: clamp(42px, 5vw, 68px);
+
+  line-height: 0.96;
+
+  font-weight: 700;
+
+  letter-spacing: -0.055em;
+
+}
+
+
+
+.hero-copy h1 span {
+
+  color: #777;
+
+}
+
+
+
+.hero-description {
+
+  margin: 18px 0 0;
+
+
+
+  color: #686868;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+
+}
+
+
+
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+   DROP ZONE
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+
+
+.drop-zone {
+
+  position: relative;
+
+
+
+  min-height: 250px;
+
+  padding: 42px;
+
+
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+
+
+  text-align: center;
+
+
+
+  border: 1px dashed #303030;
+
+  border-radius: 22px;
+
+
+
+  background:
+
+    linear-gradient(
+
+      135deg,
+
+      rgba(255, 255, 255, 0.025),
+
+      rgba(255, 255, 255, 0.008)
+
+    );
+
+
+
+  transition:
+
+    border-color 0.4s ease,
+
+background 0.4s ease,
+
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+
+    box-shadow 0.4s ease;
+
+
+
+  animation: fadeUp 0.65s 0.08s ease both;
+
+}
+
+
+
+.drop-zone::before {
+
+  content: "";
+
+
+
+  position: absolute;
+
+  inset: 0;
+
+
+
+  border-radius: inherit;
+
+
+
+  background-image:
+
+    linear-gradient(
+
+      rgba(255, 255, 255, 0.018) 1px,
+
+      transparent 1px
+
+    ),
+
+    linear-gradient(
+
+      90deg,
+
+      rgba(255, 255, 255, 0.018) 1px,
+
+      transparent 1px
+
+    );
+
+
+
+  background-size: 30px 30px;
+
+
+
+  mask-image: linear-gradient(
+
+    to bottom,
+
+    black,
+
+    transparent 90%
+
+  );
+
+
+
+  pointer-events: none;
+
+}
+
+
+
+.drop-zone.dragging {
+
+  border-color: rgba(255, 255, 255, 0.5);
+
+  background: rgba(255, 255, 255, 0.025);
+
+  transform: scale(1.006);
+
+
+
+  box-shadow:
+
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+
+    0 20px 80px rgba(0, 0, 0, 0.25);
+
+}
+
+
+
+.drop-icon {
+
+  position: relative;
+
+
+
+  width: 58px;
+
+  height: 58px;
+
+
+
+  display: grid;
+
+  place-items: center;
+
+
+
+  border: 1px solid #292929;
+
+  border-radius: 16px;
+
+
+
+  background: #111;
+
+
+
+  color: #aaa;
+
+
+
+  margin-bottom: 18px;
+
+
+
+  transition:
+
+    transform 0.25s ease,
+
+    color 0.25s ease;
+
+}
+
+
+
+.drop-zone:hover .drop-icon,
+
+.drop-zone.dragging .drop-icon {
+
+  color: #fff;
+
+  transform: translateY(-3px);
+
+}
+
+
+
+.drop-zone h2 {
+
+  position: relative;
+
+
+
+  margin: 0;
+
+
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+}
+
+
+
+.drop-zone p {
+
+  position: relative;
+
+
+
+  margin: 10px 0 20px;
+
+
+
+  color: #656565;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+
+}
+
+
+
+.drop-zone p span {
+
+  color: #444;
+
+}
+
+
+
+.browse-button {
+
+  position: relative;
+
+
+
+  padding: 9px 15px;
+
+
+
+  border: 1px solid #292929;
+
+  border-radius: 9px;
+
+
+
+  background: #111;
+
+  color: #a4a4a4;
+
+
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+
+
+  cursor: pointer;
+
+
+
+  transition:
+
+    color 0.2s ease,
+
+    border-color 0.2s ease,
+
+background 0.2s ease;
+
+}
+
+
+
+.browse-button:hover {
+
+  color: #fff;
+
+  border-color: #444;
+
+  background: #171717;
+
+}
+
+
+
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+   PROJECT PANEL
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+
+
+.project-panel {
+
+  padding: 24px;
+
+
+
+  border: 1px solid #202020;
+
+  border-radius: 18px;
+
+
+
+  background: #0d0d0d;
+
+}
+
+
+
+.project-panel-enter {
+
+  animation:
+
+    projectReveal
+
+    0.4s
+
+    cubic-bezier(0.22, 1, 0.36, 1);
+
+
+
+  transform-origin: top center;
+
+  will-change: transform, opacity;
+
+}
+
+
+
+@keyframes projectReveal {
+
+  0% {
+
+    opacity: 0;
+
+    transform: translateY(-14px);
+
+  }
+
+
+
+  100% {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+
+
+.panel-heading {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #1d1d1d;
+
+}
+
+
+
+.section-label {
+
+  margin: 0 0 6px;
+
+
+
+  color: #4e4e4e;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+}
+
+
+
+.panel-heading h3 {
+
+  margin: 0;
+
+
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.02em;
+
+}
+
+
+
+.panel-badge {
+
+  padding: 5px 8px;
+
+
+
+  border: 1px solid #242424;
+
+  border-radius: 6px;
+
+
+
+  color: #4d4d4d;
+
+
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+}
+
+
+
+.project-content {
+
+  display: grid;
+
+  grid-template-columns: 150px 1fr;
+
+  gap: 24px;
+
+
+
+  padding: 22px 0;
+
+}
+
+
+
+.artwork-placeholder {
+
+  width: 150px;
+
+  height: 150px;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  padding: 8px;
+
+  border: 1px solid #222;
+
+  border-radius: 12px;
+
+  background: #111;
+
+}
+
+.artwork-image {
+
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: contain;
+
+  border-radius: 8px;
+
+}
+
+
+
+.artwork-inner {
+
+  width: 100%;
+
+  height: 100%;
+
+
+
+  display: grid;
+
+  place-items: center;
+
+
+
+  border-radius: 8px;
+
+
+
+  background:
+
+    radial-gradient(
+
+      circle at 35% 30%,
+
+      #252525,
+
+      #111 55%,
+
+      #090909
+
+    );
+
+
+
+  color: #393939;
+
+
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+
+}
+
+
+
+.project-details {
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+}
+
+
+
+.detail-row {
+
+  min-height: 38px;
+
+
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+
+
+  border-bottom: 1px solid #171717;
+
+
+
+  color: #686868;
+
+
+
+  font-size: 10px;
+
+}
+
+
+
+.detail-row:last-child {
+
+  border-bottom: 0;
+
+}
+
+
+
+.detail-row > span:first-child {
+
+  color: #505050;
+
+  font-weight: 600;
+
+}
+
+
+
+.detail-row .muted {
+
+  color: #363636;
+
+}
+
+
+
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+   RENDER PROGRESS
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+
+
+.render-progress {
+
+  margin-top: 24px;
+
+}
+
+
+
+.render-progress-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+
+
+  margin-bottom: 10px;
+
+
+
+  font-size: 10px;
+
+  letter-spacing: 0.12em;
+
+  color: rgba(255, 255, 255, 0.55);
+
+}
+
+
+
+.render-progress-track {
+
+  width: 100%;
+
+  height: 3px;
+
+
+
+  overflow: hidden;
+
+
+
+  border-radius: 999px;
+
+
+
+  background: rgba(255, 255, 255, 0.08);
+
+}
+
+
+
+.render-progress-bar {
+
+  height: 100%;
+
+
+
+  border-radius: inherit;
+
+
+
+  background: rgba(255, 255, 255, 0.85);
+
+
+
+  transition: width 0.15s linear;
+
+}
+
+
+
+.render-progress-time {
+
+  display: flex;
+
+  justify-content: space-between;
+
+
+
+  margin-top: 8px;
+
+
+
+  font-size: 10px;
+
+  color: rgba(255, 255, 255, 0.35);
+
+}
+
+
+
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+   PANEL FOOTER
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+
+
+.panel-footer {
+
+  padding-top: 18px;
+
+
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+
+
+  border-top: 1px solid #1d1d1d;
+
+}
+
+
+
+.engine-info {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+
+
+  color: #505050;
+
+
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+}
+
+
+
+.engine-version {
+
+  color: #303030;
+
+}
+
+
+
+.create-button {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+
+
+  padding: 11px 16px;
+
+
+
+  border: 0;
+
+  border-radius: 9px;
+
+
+
+  background: #f3f3f3;
+
+  color: #090909;
+
+
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+
+
+
+  cursor: pointer;
+
+
+
+  transition:
+
+    transform 0.2s ease,
+
+    opacity 0.2s ease;
+
+}
+
+
+
+.create-button:not(:disabled):hover {
+
+  transform: translateY(-1px);
+
+}
+
+
+
+.create-button:disabled {
+
+  opacity: 0.2;
+
+  cursor: not-allowed;
+
+}
+
+
+
+.create-button span {
+
+  font-size: 15px;
+
+}
+
+
+
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+   FOOTER
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+
+
+.footer {
+
+  display: flex;
+
+  justify-content: space-between;
+
+
+
+  margin-top: auto;
+
+  padding-top: 22px;
+
+
+
+  color: #303030;
+
+
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+
+}
+
+
+
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+   GENERAL ANIMATION
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+
+
+@keyframes fadeUp {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+  }
+
+
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+
+
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+   WINDOW SIZES
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+
+
+@media (max-width: 700px) {
+
+  .app-shell {
+
+    padding: 22px;
+
+  }
+
+
+
+  .workspace {
+
+    gap: 22px;
+
+  }
+
+
+
+  .project-content {
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 18px;
+
+  }
+
+
+
+  .panel-footer {
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    flex-direction: column;
+
+  }
+
+}
+
+
+/* =========================================
+   BEATFLOW THEME SWITCHER
+   ========================================= */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.theme-toggle {
+  padding: 8px 11px;
+  border: 1px solid #35302b;
+  border-radius: 8px;
+  background: #171513;
+  color: #e9dfd2;
+  font: inherit;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: #f0b6c5;
+  color: #f0b6c5;
+}
+
+/* Beige theme: change the page, panels, and secondary surfaces. */
+.theme-beige {
+  --beige-page: #e8d8c4;
+  --beige-panel: #f2e7d8;
+  --beige-secondary: #e4d2bc;
+  --beige-border: #d2bda5;
+  --beige-text: #302720;
+  --beige-muted: #76675a;
+  --beige-pink: #f0b6c5;
+
+  color: var(--beige-text);
+  background:
+    radial-gradient(circle at 80% 12%, rgba(255, 255, 255, 0.38), transparent 32%),
+    var(--beige-page);
+}
+
+.theme-beige .brand-mark {
+  background: var(--beige-text);
+  color: var(--beige-panel);
+  border-color: var(--beige-border);
+}
+
+.theme-beige .brand-name,
+.theme-beige .hero-copy h1 {
+  color: var(--beige-text);
+}
+
+.theme-beige .brand-subtitle,
+.theme-beige .system-status,
+.theme-beige .eyebrow {
+  color: var(--beige-muted);
+}
+
+.theme-beige .hero-copy h1 span {
+  color: #d7839a;
+}
+
+.theme-beige .hero-description {
+  color: #756557;
+}
+
+.theme-beige .theme-toggle {
+  background: var(--beige-panel);
+  color: var(--beige-text);
+  border-color: var(--beige-border);
+}
+
+.theme-beige .theme-toggle:hover {
+  background: var(--beige-pink);
+  border-color: var(--beige-pink);
+  color: #302720;
+}
+
+.theme-beige .drop-zone {
+  border-color: #cbb59b;
+  background: rgba(255, 250, 242, 0.45);
+}
+
+.theme-beige .drop-zone::before {
+  background-image:
+    linear-gradient(rgba(105, 77, 51, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(105, 77, 51, 0.055) 1px, transparent 1px);
+}
+
+.theme-beige .drop-zone.dragging {
+  border-color: #bc8c9b;
+  background: rgba(240, 182, 197, 0.18);
+  box-shadow: 0 20px 60px rgba(88, 61, 40, 0.12);
+}
+
+.theme-beige .drop-icon,
+.theme-beige .browse-button {
+  background: var(--beige-panel);
+  color: var(--beige-text);
+  border-color: var(--beige-border);
+}
+
+.theme-beige .drop-zone:hover .drop-icon,
+.theme-beige .drop-zone.dragging .drop-icon {
+  color: var(--beige-text);
+}
+
+.theme-beige .drop-zone p {
+  color: var(--beige-muted);
+}
+
+.theme-beige .drop-zone p span {
+  color: #8a7664;
+}
+
+.theme-beige .browse-button:hover {
+  background: var(--beige-pink);
+  border-color: var(--beige-pink);
+  color: #302720;
+}
+
+.theme-beige .project-panel {
+  background: var(--beige-panel);
+  border-color: var(--beige-border);
+  box-shadow: 0 16px 45px rgba(85, 59, 36, 0.09);
+}
+
+.theme-beige .panel-heading {
+  border-bottom-color: var(--beige-border);
+}
+
+.theme-beige .panel-heading h3 {
+  color: var(--beige-text);
+}
+
+.theme-beige .section-label,
+.theme-beige .panel-badge {
+  color: var(--beige-muted);
+}
+
+.theme-beige .panel-badge {
+  border-color: var(--beige-border);
+}
+
+.theme-beige .artwork-placeholder {
+  background: var(--beige-secondary);
+  border-color: var(--beige-border);
+}
+
+.theme-beige .artwork-inner {
+  background: radial-gradient(circle at 35% 30%, #e7d8c7, #d8c3aa 55%, #cbb398);
+  color: #8a7664;
+}
+
+.theme-beige .detail-row {
+  color: var(--beige-muted);
+  border-bottom-color: var(--beige-border);
+}
+
+.theme-beige .detail-row > span:first-child {
+  color: #665344;
+}
+
+.theme-beige .detail-row .muted {
+  color: #554638;
+}
+
+.theme-beige .render-progress-header {
+  color: #655344;
+}
+
+.theme-beige .render-progress-track {
+  background: #d5c3ae;
+}
+
+.theme-beige .render-progress-bar {
+  background: var(--beige-pink);
+}
+
+.theme-beige .render-progress-time {
+  color: #806e5d;
+}
+
+.theme-beige .panel-footer {
+  border-top-color: var(--beige-border);
+}
+
+.theme-beige .engine-info {
+  color: var(--beige-muted);
+}
+
+.theme-beige .engine-version {
+  color: #8c7865;
+}
+
+.theme-beige .create-button {
+  background: var(--beige-pink);
+  color: #302720;
+}
+
+.theme-beige .create-button:not(:disabled):hover {
+  background: #eaa3b5;
+}
+
+.theme-beige .footer {
+  color: #8a7664;
+}
+
+.theme-beige .status-dot,
+.theme-beige .mini-dot {
+  background: #72956d;
+  box-shadow: 0 0 12px rgba(114, 149, 109, 0.25);
+}
+
+@media (max-width: 700px) {
+  .header-actions {
+    gap: 8px;
+  }
+
+  .theme-toggle {
+    padding: 7px 8px;
+    font-size: 8px;
+  }
+}
+
+
+
+/* =========================================
+   TEXTURED BLACK THEME
+   Inspired by the supplied BeatFlow reference.
+   The texture is decorative and never covers artwork.
+   ========================================= */
+
+.app-shell:not(.theme-beige) {
+  position: relative;
+  background-color: #090807;
+  background-image:
+    radial-gradient(ellipse at 76% 18%, rgba(216, 169, 145, 0.10) 0%, transparent 34%),
+    radial-gradient(ellipse at 12% 62%, rgba(240, 182, 197, 0.045) 0%, transparent 30%),
+    radial-gradient(ellipse at 50% 100%, rgba(255, 238, 218, 0.025) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+  background-size: auto, auto, auto, 180px 180px;
+  background-attachment: fixed;
+}
+
+.app-shell:not(.theme-beige) .drop-zone {
+  background:
+    radial-gradient(circle at 75% 28%, rgba(240, 182, 197, 0.035), transparent 36%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.006));
+}
+
+.app-shell:not(.theme-beige) .drop-zone::before {
+  background-image:
+    linear-gradient(rgba(231, 205, 187, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(231, 205, 187, 0.025) 1px, transparent 1px),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.035' numOctaves='2' seed='12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)' opacity='.35'/%3E%3C/svg%3E");
+  background-size: 30px 30px, 30px 30px, 220px 220px;
+  opacity: 0.8;
+}
+
+.app-shell:not(.theme-beige) .project-panel {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(214, 174, 148, 0.025), transparent 38%),
+    #0d0c0b;
+  border-color: #25211e;
+}
+
+.app-shell:not(.theme-beige) .artwork-placeholder {
+  background: #11100f;
+  border-color: #2a2522;
+}
+
+.app-shell:not(.theme-beige) .theme-toggle {
+  background: #171412;
+  border-color: #3a302b;
+  color: #e9dfd2;
+}
+
+.app-shell:not(.theme-beige) .create-button {
+  background: #f0b6c5;
+  color: #1b1114;
+}
+
+.app-shell:not(.theme-beige) .hero-copy h1 span {
+  color: #f0b6c5;
+}
+
+/* A restrained warm grain for beige mode too. */
+.theme-beige {
+  background-image:
+    radial-gradient(circle at 80% 12%, rgba(255, 255, 255, 0.38), transparent 32%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='.12'/%3E%3C/svg%3E"),
+    var(--beige-page);
+  background-size: auto, 180px 180px, auto;
+  background-attachment: fixed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .browse-button,
+  .create-button {
+    transition: none;
+  }
+}
+
+
+
+/* =========================================
+   BEIGE MODE â€” SAME COMPONENTS, SAME LAYOUT
+   Only the palette and surface treatment change.
+   ========================================= */
+.theme-beige .header-actions,
+.theme-beige .topbar,
+.theme-beige .workspace,
+.theme-beige .project-content,
+.theme-beige .panel-footer {
+  color: var(--beige-text);
+}
+
+.theme-beige .app-shell,
+.app-shell.theme-beige {
+  background-color: var(--beige-page);
+  color: var(--beige-text);
+  background-image:
+    radial-gradient(ellipse at 82% 12%, rgba(255, 255, 255, 0.42), transparent 34%),
+    radial-gradient(ellipse at 10% 85%, rgba(194, 153, 116, 0.12), transparent 34%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='.12'/%3E%3C/svg%3E");
+  background-size: auto, auto, 180px 180px;
+  background-attachment: fixed;
+}
+
+.theme-beige .project-panel {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(255, 255, 255, 0.35), transparent 42%),
+    var(--beige-panel);
+  border-color: var(--beige-border);
+}
+
+.theme-beige .panel-heading {
+  border-bottom-color: var(--beige-border);
+}
+
+.theme-beige .panel-heading h3,
+.theme-beige .detail-row,
+.theme-beige .detail-row .muted,
+.theme-beige .render-progress-header,
+.theme-beige .engine-info,
+.theme-beige .footer,
+.theme-beige .panel-footer {
+  color: var(--beige-text);
+}
+
+.theme-beige .panel-badge,
+.theme-beige .section-label,
+.theme-beige .engine-version {
+  border-color: var(--beige-border);
+  color: var(--beige-muted);
+}
+
+.theme-beige .detail-row {
+  border-bottom-color: rgba(119, 94, 69, 0.18);
+}
+
+.theme-beige .render-progress-track {
+  background: #d8c5af;
+}
+
+.theme-beige .render-progress-bar {
+  background: #f0a7bb;
+}
+
+.theme-beige .drop-zone {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.08)),
+    rgba(228, 210, 188, 0.36);
+  border-color: #cdb79e;
+}
+
+.theme-beige .drop-zone::before {
+  background-image:
+    linear-gradient(rgba(105, 77, 51, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(105, 77, 51, 0.045) 1px, transparent 1px),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.035' numOctaves='2' seed='12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)' opacity='.18'/%3E%3C/svg%3E");
+  background-size: 30px 30px, 30px 30px, 220px 220px;
+}
+
+.theme-beige .drop-icon,
+.theme-beige .browse-button {
+  background: #f5eadc;
+  color: var(--beige-text);
+  border-color: var(--beige-border);
+}
+
+.theme-beige .create-button {
+  background: #f0b6c5;
+  color: #302720;
+}
+
+.theme-beige .create-button:disabled {
+  opacity: 0.55;
+}
+
+.theme-beige .artwork-placeholder {
+  background: #ddc9b2;
+  border-color: var(--beige-border);
+}
+
+/* =========================================
+   COMPACT WINDOW SUPPORT
+   Tuned for the ~715 x 530 app window in the
+   supplied screenshot, without hiding controls.
+   ========================================= */
+@media (max-width: 900px) and (max-height: 700px) {
+  .app-shell {
+    min-height: 100vh;
+    padding: 16px 20px 14px;
+  }
+
+  .topbar {
+    height: 38px;
+    flex: 0 0 38px;
+  }
+
+  .brand {
+    gap: 9px;
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+  }
+
+  .brand-name {
+    font-size: 11px;
+    letter-spacing: 0.13em;
+  }
+
+  .brand-subtitle {
+    font-size: 7px;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .theme-toggle {
+    padding: 7px 9px;
+    font-size: 8px;
+  }
+
+  .system-status {
+    font-size: 8px;
+    gap: 6px;
+  }
+
+  .workspace {
+    width: 100%;
+    margin: 20px auto 0;
+    gap: 18px;
+  }
+
+  .hero-copy .eyebrow {
+    margin-bottom: 9px;
+    font-size: 8px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(32px, 5vw, 42px);
+    line-height: 0.98;
+  }
+
+  .hero-description {
+    margin-top: 12px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .drop-zone {
+    min-height: 220px;
+    padding: 24px 18px;
+    border-radius: 17px;
+  }
+
+  .drop-icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 14px;
+  }
+
+  .drop-zone h2 {
+    font-size: 12px;
+  }
+
+  .drop-zone p {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .browse-button {
+    margin-top: 14px;
+    padding: 9px 13px;
+    font-size: 10px;
+  }
+
+  .project-panel {
+    padding: 16px;
+    border-radius: 15px;
+  }
+
+  .panel-heading {
+    padding-bottom: 13px;
+  }
+
+  .project-content {
+    gap: 14px;
+  }
+
+  .panel-footer {
+    padding-top: 14px;
+  }
+
+  .footer {
+    padding-top: 12px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 520px) {
+  .app-shell {
+    padding: 14px;
+  }
+
+  .header-actions {
+    gap: 7px;
+  }
+
+  .system-status {
+    display: none;
+  }
+
+  .workspace {
+    margin-top: 18px;
+    gap: 16px;
+  }
+
+  .project-content {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 12px;
+  }
+}
+
+/* =====================================================
+   DARK THEME REDESIGN â€” MATCHES THE BEIGE LAYOUT
+   Same structure and hierarchy; dark palette only.
+   Beige mode is intentionally not changed by these rules.
+   ===================================================== */
+.app-shell:not(.theme-beige) {
+  --dark-page: #171615;
+  --dark-panel: #211f1d;
+  --dark-panel-raised: #282522;
+  --dark-border: #403a35;
+  --dark-text: #f3eee8;
+  --dark-muted: #b4a79b;
+  --dark-pink: #f0b6c5;
+  color: var(--dark-text);
+  background-color: var(--dark-page);
+  background-image:
+    radial-gradient(ellipse at 78% 8%, rgba(240, 182, 197, 0.065), transparent 34%),
+    radial-gradient(ellipse at 8% 85%, rgba(211, 166, 128, 0.045), transparent 35%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+  background-size: auto, auto, 180px 180px;
+  background-attachment: fixed;
+}
+
+.app-shell:not(.theme-beige) .brand-name,
+.app-shell:not(.theme-beige) .hero-copy h1,
+.app-shell:not(.theme-beige) .panel-heading h3,
+.app-shell:not(.theme-beige) .detail-row,
+.app-shell:not(.theme-beige) .render-progress-header,
+.app-shell:not(.theme-beige) .drop-zone h2 {
+  color: var(--dark-text);
+}
+
+.app-shell:not(.theme-beige) .brand-mark {
+  color: #171615;
+  background: #f3eee8;
+  border-color: #f3eee8;
+}
+
+.app-shell:not(.theme-beige) .brand-subtitle,
+.app-shell:not(.theme-beige) .system-status,
+.app-shell:not(.theme-beige) .eyebrow,
+.app-shell:not(.theme-beige) .hero-description,
+.app-shell:not(.theme-beige) .drop-zone p,
+.app-shell:not(.theme-beige) .section-label,
+.app-shell:not(.theme-beige) .detail-row > span:first-child,
+.app-shell:not(.theme-beige) .engine-info,
+.app-shell:not(.theme-beige) .footer {
+  color: var(--dark-muted);
+}
+
+.app-shell:not(.theme-beige) .hero-copy h1 span {
+  color: var(--dark-pink);
+}
+
+.app-shell:not(.theme-beige) .drop-zone {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.035), rgba(255,255,255,.012)),
+    rgba(33, 31, 29, .62);
+  border-color: #5a4b46;
+}
+
+.app-shell:not(.theme-beige) .drop-zone::before {
+  background-image:
+    linear-gradient(rgba(240, 220, 205, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240, 220, 205, .035) 1px, transparent 1px),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.035' numOctaves='2' seed='12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)' opacity='.18'/%3E%3C/svg%3E");
+  background-size: 30px 30px, 30px 30px, 220px 220px;
+}
+
+.app-shell:not(.theme-beige) .drop-icon,
+.app-shell:not(.theme-beige) .browse-button {
+  background: #2b2723;
+  color: var(--dark-text);
+  border-color: #594b41;
+}
+
+.app-shell:not(.theme-beige) .browse-button:hover {
+  background: #3b302c;
+  border-color: var(--dark-pink);
+}
+
+.app-shell:not(.theme-beige) .project-panel {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(255,255,255,.025), transparent 42%),
+    var(--dark-panel);
+  border-color: var(--dark-border);
+  box-shadow: 0 16px 45px rgba(0,0,0,.18);
+}
+
+.app-shell:not(.theme-beige) .panel-heading {
+  border-bottom-color: var(--dark-border);
+}
+
+.app-shell:not(.theme-beige) .panel-badge {
+  color: var(--dark-muted);
+  border-color: var(--dark-border);
+}
+
+.app-shell:not(.theme-beige) .artwork-placeholder {
+  background: var(--dark-panel-raised);
+  border-color: var(--dark-border);
+}
+
+.app-shell:not(.theme-beige) .detail-row {
+  border-bottom-color: rgba(220, 205, 191, .14);
+}
+
+.app-shell:not(.theme-beige) .detail-row .muted,
+.app-shell:not(.theme-beige) .render-progress-time,
+.app-shell:not(.theme-beige) .engine-version {
+  color: #c1b4a8;
+}
+
+.app-shell:not(.theme-beige) .render-progress-track {
+  background: #4a433e;
+}
+
+.app-shell:not(.theme-beige) .render-progress-bar,
+.app-shell:not(.theme-beige) .create-button {
+  background: var(--dark-pink);
+}
+
+.app-shell:not(.theme-beige) .create-button {
+  color: #271b1e;
+}
+
+.app-shell:not(.theme-beige) .theme-toggle {
+  background: #282522;
+  color: var(--dark-text);
+  border-color: var(--dark-border);
+}
+
+.app-shell:not(.theme-beige) .theme-toggle:hover {
+  color: var(--dark-pink);
+  border-color: var(--dark-pink);
+}
+
+/* Readable type scale for the dark theme, without changing beige. */
+.app-shell:not(.theme-beige) .brand-name { font-size: 15px; }
+.app-shell:not(.theme-beige) .brand-subtitle { font-size: 10px; }
+.app-shell:not(.theme-beige) .system-status { font-size: 10px; }
+.app-shell:not(.theme-beige) .eyebrow { font-size: 10px; }
+.app-shell:not(.theme-beige) .hero-copy h1 { font-size: clamp(44px, 5.2vw, 68px); }
+.app-shell:not(.theme-beige) .hero-description { font-size: 15px; line-height: 1.6; }
+.app-shell:not(.theme-beige) .drop-zone h2 { font-size: 16px; }
+.app-shell:not(.theme-beige) .drop-zone p { font-size: 13px; line-height: 1.55; }
+.app-shell:not(.theme-beige) .browse-button { font-size: 13px; }
+.app-shell:not(.theme-beige) .section-label { font-size: 10px; }
+.app-shell:not(.theme-beige) .panel-heading h3 { font-size: 18px; }
+.app-shell:not(.theme-beige) .panel-badge { font-size: 9px; }
+.app-shell:not(.theme-beige) .detail-row { font-size: 13px; }
+.app-shell:not(.theme-beige) .render-progress-header { font-size: 12px; }
+.app-shell:not(.theme-beige) .render-progress-time { font-size: 11px; }
+.app-shell:not(.theme-beige) .create-button { font-size: 12px; }
+.app-shell:not(.theme-beige) .engine-info,
+.app-shell:not(.theme-beige) .engine-version,
+.app-shell:not(.theme-beige) .footer { font-size: 10px; }
+
+/* Let long content scroll in a compact window rather than clipping it. */
+html, body, #root { min-height: 100%; }
+.app-shell { min-height: 100vh; overflow-x: hidden; overflow-y: auto; }
+@media (max-height: 720px) {
+  .app-shell { padding-top: 20px; padding-bottom: 18px; }
+  .workspace { gap: 22px; }
+  .drop-zone { min-height: 220px; padding: 30px; }
+}
+@media (max-width: 760px) {
+  .app-shell:not(.theme-beige) .hero-copy h1 { font-size: clamp(38px, 7vw, 52px); }
+  .app-shell:not(.theme-beige) .hero-description { font-size: 14px; }
+}
+
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   HOVER FEEDBACK + DROP-ZONE COPY CLARITY
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+/* The helper line stays readable in both themes. */
+.drop-zone p span {
+  display: inline-block;
+  margin-top: 2px;
+  color: #b9b0a7;
+  opacity: 1;
+  transition: color 180ms ease, transform 220ms ease;
+}
+
+.theme-beige .drop-zone p span {
+  color: #796b5e;
+  opacity: 1;
+}
+
+.drop-zone:hover p span {
+  color: #f0b6c5;
+  transform: translateY(-1px);
+}
+
+.theme-beige .drop-zone:hover p span {
+  color: #c86f8c;
+}
+
+/* A subtle, tactile liftâ€”not a large zoom. */
+.drop-zone {
+  transform-origin: center;
+  transition:
+    border-color 220ms ease,
+    background 220ms ease,
+    transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 240ms ease;
+}
+
+.drop-zone:hover {
+  transform: scale(1.006);
+  border-color: rgba(240, 182, 197, 0.58);
+  box-shadow:
+    0 0 0 1px rgba(240, 182, 197, 0.035),
+    0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.theme-beige .drop-zone:hover {
+  border-color: rgba(200, 111, 140, 0.58);
+  box-shadow:
+    0 0 0 1px rgba(200, 111, 140, 0.04),
+    0 12px 28px rgba(100, 70, 45, 0.08);
+}
+
+.browse-button,
+.theme-toggle,
+.create-button {
+  transform: translateZ(0);
+  transition:
+    transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.browse-button:hover,
+.theme-toggle:hover {
+  transform: translateY(-2px) scale(1.025);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.16);
+}
+
+.create-button:hover {
+  transform: translateY(-2px) scale(1.025);
+  box-shadow: 0 7px 20px rgba(240, 182, 197, 0.2);
+}
+
+.browse-button:active,
+.theme-toggle:active,
+.create-button:active {
+  transform: translateY(0) scale(0.985);
+  box-shadow: none;
+}
+
+.drop-zone .drop-icon {
+  transition:
+    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.drop-zone:hover .drop-icon {
+  transform: translateY(-3px) scale(1.035);
+  box-shadow: 0 5px 18px rgba(240, 182, 197, 0.09);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drop-zone,
+  .drop-zone .drop-icon,
+  .drop-zone p span,
+  .browse-button,
+  .theme-toggle,
+  .create-button {
+    transition: none;
+  }
+
+  .drop-zone:hover,
+  .drop-zone:hover .drop-icon,
+  .browse-button:hover,
+  .theme-toggle:hover,
+  .create-button:hover {
+    transform: none;
+  }
+}
+
+
+
+/* Fix blurry/ghosted helper text in the drop zone.
+   Avoid transforming the whole panel: scaled text can look fuzzy in WebView. */
+.drop-zone {
+  transform: none !important;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.drop-zone p {
+  color: #b9b0a7;
+  opacity: 1;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+.drop-zone p span,
+.drop-zone:hover p span,
+.theme-beige .drop-zone p span,
+.theme-beige .drop-zone:hover p span {
+  display: inline-block;
+  color: #f0b6c5;
+  opacity: 1;
+  transform: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.theme-beige .drop-zone p {
+  color: #796b5e;
+}
+
+.theme-beige .drop-zone p span,
+.theme-beige .drop-zone:hover p span {
+  color: #c86f8c;
+}
+
+/* Keep hover feedback on the border/glow, not by scaling text. */
+.drop-zone:hover {
+  transform: none !important;
+}
+
+
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   BEATFLOW GRUNGE TEXTURE â€” NO GRID / NO BLOCKS
+   Uses CSS-only texture, so no extra asset is required.
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+/* Remove the tiled grid and replace the patchy background with one
+   continuous charcoal surface, distressed edges, and subtle grain. */
+.app-shell:not(.theme-beige) .drop-zone {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 48%, rgba(9, 8, 8, 0.92) 0%, rgba(12, 11, 10, 0.82) 35%, rgba(20, 18, 17, 0.30) 72%, rgba(14, 12, 11, 0.50) 100%),
+    radial-gradient(ellipse at 4% 18%, rgba(186, 180, 173, 0.16), transparent 31%),
+    radial-gradient(ellipse at 96% 28%, rgba(160, 154, 148, 0.13), transparent 30%),
+    radial-gradient(ellipse at 9% 100%, rgba(185, 177, 169, 0.12), transparent 29%),
+    radial-gradient(ellipse at 95% 100%, rgba(166, 157, 150, 0.10), transparent 32%),
+    #171514;
+  background-size: auto;
+  box-shadow: inset 0 0 70px rgba(0, 0, 0, 0.32);
+}
+
+/* Fine film grain and irregular distressed marks â€” explicitly no grid. */
+.app-shell:not(.theme-beige) .drop-zone::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.40;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch' seed='17'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 4% 26%, rgba(218, 213, 207, 0.24) 0 1%, transparent 14%),
+    radial-gradient(ellipse at 12% 80%, rgba(218, 213, 207, 0.14) 0 2%, transparent 17%),
+    radial-gradient(ellipse at 95% 22%, rgba(218, 213, 207, 0.17) 0 1%, transparent 13%),
+    radial-gradient(ellipse at 88% 84%, rgba(218, 213, 207, 0.12) 0 2%, transparent 16%);
+  background-size: 240px 240px, auto, auto, auto, auto;
+  mix-blend-mode: screen;
+}
+
+/* A soft dark veil keeps the text area clean and readable. */
+.app-shell:not(.theme-beige) .drop-zone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(10, 9, 9, 0.18) 0%,
+    rgba(10, 9, 9, 0.10) 42%,
+    rgba(10, 9, 9, 0.02) 72%,
+    rgba(10, 9, 9, 0.18) 100%
+  );
+}
+
+/* Keep hover interaction limited to the border/glow, never scale text. */
+.app-shell:not(.theme-beige) .drop-zone:hover {
+  transform: none !important;
+  box-shadow:
+    inset 0 0 70px rgba(0, 0, 0, 0.30),
+    0 0 0 1px rgba(240, 182, 197, 0.08),
+    0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* The beige design is intentionally untouched by the grunge override. */
+
+
+
+/* REAL GRUNGE IMAGE ASSET
+   Put beatflow-grunge-texture.png in the project's public/ folder.
+   Beige mode is intentionally excluded. */
+.app-shell:not(.theme-beige) {
+  background-color: #11100f;
+  background-image:
+    linear-gradient(rgba(10, 9, 9, 0.42), rgba(10, 9, 9, 0.50)),
+    url("/beatflow-grunge-texture.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.app-shell:not(.theme-beige) .drop-zone {
+  background-color: #11100f;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(10, 9, 9, 0.04) 0%,
+      rgba(10, 9, 9, 0.60) 35%,
+      rgba(10, 9, 9, 0.64) 65%,
+      rgba(10, 9, 9, 0.04) 100%
+    ),
+    url("/beatflow-grunge-texture.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 70px rgba(0, 0, 0, 0.28);
+}
+
+.app-shell:not(.theme-beige) .drop-zone::before {
+  content: none !important;
+  background: none !important;
+}
+
+.app-shell:not(.theme-beige) .drop-zone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(8, 7, 7, 0.76) 0%,
+    rgba(8, 7, 7, 0.60) 34%,
+    rgba(8, 7, 7, 0.25) 68%,
+    rgba(8, 7, 7, 0.08) 100%
+  );
+}
+
+.app-shell:not(.theme-beige) .drop-zone > * {
+  position: relative;
+  z-index: 1;
+}
