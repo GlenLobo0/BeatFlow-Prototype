@@ -4,6 +4,10 @@
 
 BeatFlow is a desktop automation tool for music producers. It combines audio and artwork into an MP4 video using FFmpeg, reducing the repetitive work involved in preparing beats for YouTube.
 
+## 🎬 BeatFlow in Action
+
+![BeatFlow macOS app demo](Mac/BeatFlow/docs/beatflow-demo.gif)
+
 ## macOS Desktop App
 
 The current macOS application is built with Tauri, React, TypeScript, Rust, and FFmpeg.
